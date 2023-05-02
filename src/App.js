@@ -1,4 +1,4 @@
-import logo from './quacktice-test-icon.png';
+import logo from './quacktice-test-header-image.png';
 import './App.css';
 import { useState } from 'react';
 import LoginPopup from './components/user/LoginPopup';
@@ -18,7 +18,6 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <section className="below-icon">
-            <h1>QuackticeTest</h1>
             <p className="tagline">
               Don't Wing It!
             </p>
