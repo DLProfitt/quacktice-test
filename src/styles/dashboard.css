@@ -43,6 +43,7 @@
   padding: 0 10px;
   /* reduce the padding to half */
   position: relative;
+  z-index: 1;
 }
 
 .profile-thumbnail {
@@ -96,6 +97,7 @@
 }
 
 .main-content {
+  background-color: #fafdfb;
   display: flex;
   flex-grow: 1;
   padding: 20px;
@@ -103,9 +105,9 @@
 
 /*  */
 .right-section {
-  color: ghostwhite;
+  color: #fafdfb;
   text-decoration: none;
-  color: ghostwhite;
+  color: #fafdfb;
   display: flex;
   /* justify-content: space-between; */
   justify-content: space-evenly;

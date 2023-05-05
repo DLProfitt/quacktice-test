@@ -1,6 +1,8 @@
+import { Route } from "react-router-dom";
 import React, { useContext } from "react";
+import Home from "./Home";
 import { SidebarContext } from "./Dashboard";
-import '../../styles/dashboard.css';
+import '../../styles/dashboard.css'; // Import the mainContent.css file
 
 const MainContent = () => {
   const { isOpen, setIsOpen } = useContext(SidebarContext);
@@ -16,12 +18,14 @@ const MainContent = () => {
   </span>]
 
   return (
-    <div className="main-content">
-      <button onClick={toggleSidebar} className="toggle-btn">
-        {isOpen ? arrows[0] : arrows[1]}
-      </button>
-      {/* Render main content here */}
-    </div>
+    <>
+      <div className="main-content">
+        <button onClick={toggleSidebar} className="toggle-btn">
+          {isOpen ? arrows[0] : arrows[1]}
+        </button>
+        {<Home />}
+      </div>
+    </>
   );
 };
 
