@@ -1,8 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import defaultProfilePic from "../../profile-pic-ernie.png";
 import logo from "../../quacktice-test-icon.png";
 import '../../styles/dashboard.css';
+import Quiz from "./Quiz";
 
 const Header = () => {
   // Replace the user object with actual user data when available
@@ -10,6 +11,8 @@ const Header = () => {
     firstName: "Ernie",
     profilePic: defaultProfilePic,
   };
+
+  const location = useLocation();
 
   return (
     <header className="dashboard-header">
@@ -21,9 +24,24 @@ const Header = () => {
         <img src={logo} alt="App Logo" className="app-logo" />
       </div>
       <div className="right-section">
-        <NavLink to="/home" activeClassName="active">Home</NavLink>
-        <NavLink to="/quiz" activeClassName="active">Quiz</NavLink>
-        <NavLink to="/about-me" activeClassName="active">About Me</NavLink>
+        <Link
+          to="/home"
+          className={`dashboard-nav-link ${location.pathname === "/home" ? "active" : ""}`}
+        >
+          Home
+        </Link>
+        <Link
+          to="/quiz"
+          className={`dashboard-nav-link ${location.pathname === "/quiz" ? "active" : ""}`}
+        >
+          Quiz
+        </Link>
+        <Link
+          to="/about-me"
+          className={`dashboard-nav-link ${location.pathname === "/about-me" ? "active" : ""}`}
+        >
+          About
+        </Link>
       </div>
     </header>
   );

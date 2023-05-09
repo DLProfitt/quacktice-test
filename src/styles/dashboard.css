@@ -32,7 +32,7 @@
 }
 
 .dashboard-header {
-  min-width: 600px;
+  min-width: 500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,14 +79,22 @@
 }
 
 .dashboard-nav-link {
-  color: #61dafb;
+  color: #009fe2;
+  /* Change the color to white or any other color you prefer */
   text-decoration: none;
   margin-left: 25px;
-  /* reduce the margin to half */
 }
 
 .dashboard-nav-link:hover {
-  text-decoration: underline;
+  color: #f6ea00;
+  text-decoration: none;
+  /* Remove the underline on hover */
+}
+
+.active {
+  color: #009fe2;
+  /* Change the color to white or any other color you prefer */
+  text-decoration: none;
 }
 
 .left-section {
@@ -97,13 +105,14 @@
 }
 
 .main-content {
-  background-color: #fafdfb;
+  background-color: #9399a5;
   display: flex;
   flex-grow: 1;
   padding: 20px;
 }
 
 /*  */
+
 .right-section {
   color: #fafdfb;
   text-decoration: none;

@@ -7,7 +7,7 @@ const Home = () => {
       <div className="home">
         <div className="home-welcome">
           <h1>Welcome to Quacktice Test</h1>
-          <p>
+          <p className="welcome-message">
             Your one-stop platform to practice and test your knowledge across various technical skills.
           </p>
         </div>
