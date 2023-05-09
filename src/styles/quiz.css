@@ -1,0 +1,165 @@
+.quiz-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.quiz-frame {
+  background-color: #fbfcfb;
+  position: relative;
+  min-width: 500px;
+  width: 600px;
+  height: 400px;
+  border: 4px solid #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.duck-img {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 130px;
+  height: 130px;
+  cursor: pointer;
+}
+
+.question-container {
+  width: 100%;
+  text-align: center;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.results {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-results {
+  width: 100%;
+  min-width: 600px;
+  max-width: fit-content;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.answers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.answer-button {
+  background-color: #4249c6;
+  color: #fbfcfb;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.answer-button:hover {
+  background-color: #627089;
+}
+
+.submit-button {
+  position: absolute;
+  background-color: #009fe2;
+  color: #fbfcfb;
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  top: 80%;
+  z-index: 1;
+}
+
+.submit-button:hover {
+  background-color: #f6ea00;
+}
+
+.result-question-container {
+  background-color: #fbfcfb;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+  border: 4px solid #282c34;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.result-question {
+  font-size: larger;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.answers-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.answer-label {
+  font-size: 16px;
+}
+
+.chosen-answer,
+.correct-answer {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.arrow-button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.left-arrow {
+  left: -50px;
+}
+
+.right-arrow {
+  right: -50px;
+}

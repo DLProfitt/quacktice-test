@@ -22,17 +22,26 @@ const RegistrationForm = ({ onLoginClick }) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const timestamp = new Date().toISOString();
+
     try {
-      const newUser = await registerUser({
-        // ... user data
-      });
-      console.log("User registered:", newUser);
-      login(newUser);
-      // Redirect to dashboard
+      const user = {
+        username: username,
+        email: email,
+        password_hash: password, // In a real-world application, use a strong hashing algorithm like bcrypt.
+        created_at: timestamp,
+        updated_at: timestamp,
+      };
+
+      const registeredUser = await registerUser(user);
+      console.log('User registered successfully:', registeredUser);
+
+      // Perform further actions like redirecting to the dashboard
     } catch (error) {
-      console.error("Registration error:", error);
+      console.error('Error registering user:', error);
     }
   };
 
