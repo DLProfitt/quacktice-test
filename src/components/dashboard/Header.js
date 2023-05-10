@@ -4,10 +4,18 @@ import defaultProfilePic from '../../profile-pic-ernie.png';
 import logo from '../../quacktice-test-icon.png';
 import '../../styles/dashboard.css';
 import '../user/ProfilePopup.css';
+import { getStoredUsers, removeStoredUsers } from '../../utils/localstorage.js';
+
 
 const Header = ({ userData, onProfileClick }) => {
-  const { username } = userData;
   const location = useLocation();
+  const currentUserData = getStoredUsers();
+  const currentUser = currentUserData.username;
+
+  const handleLogout = () => {
+    removeStoredUsers();
+    window.location.reload();
+  }
 
   return (
     <header className="dashboard-header">
@@ -25,7 +33,7 @@ const Header = ({ userData, onProfileClick }) => {
             <i className="fas fa-pencil-alt"></i>
           </div>
         </div>
-        <span>Hello, {username}!</span>
+        <span>Hello, {currentUser}!</span>
       </div>
       <div className="middle-section">
         <img src={logo} alt="App Logo" className="app-logo" />
@@ -45,15 +53,16 @@ const Header = ({ userData, onProfileClick }) => {
         >
           Quiz
         </Link>
-        {/* <Link
-          to="/about-me"
-          className={`dashboard-nav-link ${location.pathname === '/about-me' ? 'active' : ''
+        <Link
+          onClick={handleLogout}
+          to="/"
+          className={`dashboard-nav-link ${location.pathname === '/quiz' ? 'active' : ''
             }`}
         >
-          About
-        </Link> */}
-      </div>
-    </header>
+          Logout
+        </Link>
+      </div >
+    </header >
   );
 };
 

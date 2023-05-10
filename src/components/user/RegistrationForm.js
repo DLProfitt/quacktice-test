@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../utils/api';
+import { setStoredUsers } from '../../utils/localstorage';
 import { useAuth } from '../../context/AuthContext';
 import './LoginPopup.css';
 
@@ -37,6 +38,8 @@ const RegistrationForm = ({ onLoginClick }) => {
         created_at: timestamp,
         updated_at: timestamp,
       };
+
+      setStoredUsers(user);
 
       const registeredUser = await registerUser(user);
       console.log('User registered successfully:', registeredUser);

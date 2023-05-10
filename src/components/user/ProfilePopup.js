@@ -40,7 +40,7 @@ const ProfilePopup = ({ onClose }) => {
     } catch (error) {
       console.error('Error saving user data:', error);
     }
-    setIsEditing(false);
+    handleEditClick(false);
   };
 
   return (
@@ -49,6 +49,7 @@ const ProfilePopup = ({ onClose }) => {
         <Profile
           userData={fetchedUserData}
           isEditing={isEditing}
+          toggleIsEditing={handleEditClick}
           onEditClick={isEditing ? handleSaveClick : handleEditClick}
           onCloseClick={onClose}
         />

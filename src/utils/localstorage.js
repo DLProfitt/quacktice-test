@@ -1,10 +1,15 @@
 export const getStoredUsers = () => {
-  const users = localStorage.getItem('users');
-  return users ? JSON.parse(users) : [];
+  const user = localStorage.getItem('user');
+  return user ? JSON.parse(user) : [];
 };
 
-export const setStoredUsers = (users) => {
-  localStorage.setItem('users', JSON.stringify(users));
+export const setStoredUsers = (user) => {
+  localStorage.setItem('user', JSON.stringify(user));
+};
+
+export const removeStoredUsers = () => {
+  localStorage.removeItem('user');
+  localStorage.removeItem('users');
 };
 
 export const getActiveUserId = () => {

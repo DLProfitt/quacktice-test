@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import duckImg from "../../rubber-duck-ian-malcolm.png";
+// import duckImg from "../../rubber-duck-ian-malcolm.png";
 import "../../styles/quiz.css";
 
 // Quiz Functional Component
@@ -130,7 +130,7 @@ const Quiz = () => {
             &rarr;
           </button>
         </div>
-        <img src={duckImg} alt="rubber duck" className="duck-img" />
+        {/* <img src={duckImg} alt="rubber duck" className="duck-img" /> */}
         {currentQuestionIndex === questionsArray.length - 1 && (
           <button className="submit-button" onClick={handleSubmitQuiz}>
             Submit
