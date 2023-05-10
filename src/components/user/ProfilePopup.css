@@ -1,0 +1,164 @@
+/* src/components/profile/ProfilePopup.css */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.profile-picture-large {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+}
+
+.profile-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.profile-popup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fafdfb;
+  background-color: #282c34;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.profile-popup h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.profile-popup label {
+  margin-bottom: 8px;
+}
+
+.profile-popup input {
+  width: 245px;
+  margin-bottom: 16px;
+  padding: 8px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.profile-popup input:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+}
+
+.profile-popup textarea {
+  max-width: 385px;
+  min-width: 385px;
+}
+
+.profile-popup button[type="submit"] {
+  background-color: #0077cc;
+  color: #fafdfb;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.profile-popup button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+.profile-popup button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+}
+
+.profile-popup button[type="button"] {
+  background-color: transparent;
+  color: #0077cc;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+}
+
+.profile-popup button[type="button"]:hover {
+  color: #005fa3;
+}
+
+.profile-popup button[type="button"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+}
+
+/* Add styles for edit icons */
+.edit-icon {
+  display: none;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.edit-icon:hover {
+  color: #0077cc;
+}
+
+.profile-popup.edit-mode .edit-icon {
+  display: inline;
+}
+
+/* Profile picture hover effect */
+.profile-pic-container {
+  position: relative;
+}
+
+.profile-pic-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profile-pic-container:hover .profile-pic-hover {
+  opacity: 0.5;
+}
+
+.login-input {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 385px;
+}
+
+.password {
+  color: #fafdfb;
+}

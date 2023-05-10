@@ -1,7 +1,7 @@
 // src/components/user/LoginForm.js
 import React, { useState } from 'react';
-import { loginUser } from '../../utils/api';
-import { useAuth } from '../../context/AuthContext';
+import { loginUser } from '../../utils/api.js';
+import { useAuth } from '../../context/AuthContext.js';
 
 const LoginForm = ({ onRegisterClick }) => {
   const [email, setEmail] = useState('');
@@ -30,11 +30,14 @@ const LoginForm = ({ onRegisterClick }) => {
   };
 
   return (
-    <div>
+    <div className="form-div">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="login-input">
+          <div>
           <label htmlFor="email">Email:</label>
+          </div>
+          <div className="input-area">
           <input
             type="email"
             id="email"
@@ -42,9 +45,13 @@ const LoginForm = ({ onRegisterClick }) => {
             onChange={handleEmailChange}
             required
           />
+          </div>
         </div>
-        <div>
+        <div className="login-input">
+          <div>
           <label htmlFor="password">Password:</label>
+          </div>
+          <div className="input-area">
           <input
             type="password"
             id="password"
@@ -52,6 +59,7 @@ const LoginForm = ({ onRegisterClick }) => {
             onChange={handlePasswordChange}
             required
           />
+          </div>
         </div>
         <button type="submit">Login</button>
       </form>

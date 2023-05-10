@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import logo from './quacktice-test-header-image.png';
 import './App.css';
-import LoginPopup from './components/user/LoginPopup';
-import { useAuth } from './context/AuthContext';
-import Dashboard from './components/dashboard/Dashboard';
+import LoginPopup from './components/user/LoginPopup.js';
+import { useAuth } from './context/AuthContext.js';
+import Dashboard from './components/dashboard/Dashboard.js';
 
 function App() {
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -16,7 +16,8 @@ function App() {
   return (
     <div className="App">
       {user ? (
-        <Dashboard />
+        // Pass the user object to the Dashboard component as userData prop
+        <Dashboard userData={user} />
       ) : (
         <>
           <header className="App-header">

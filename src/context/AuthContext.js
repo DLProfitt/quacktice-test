@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     user,
     login,
-    logout,
+    logout
   };
 
   // Return the AuthContext.Provider component with the value object as its value prop

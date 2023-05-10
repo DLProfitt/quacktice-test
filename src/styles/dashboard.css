@@ -1,3 +1,7 @@
+/* html {
+  cursor: none;
+} */
+
 .dashboard-container {
   display: flex;
   height: 100vh;
@@ -105,7 +109,9 @@
 }
 
 .main-content {
-  background-color: #9399a5;
+  background-image: url("../quacktice-test-gradient-background.png");
+  background-color: #cccccc;
+  background-size: cover;
   display: flex;
   flex-grow: 1;
   padding: 20px;
