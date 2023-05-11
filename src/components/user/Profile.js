@@ -7,7 +7,7 @@ import { setStoredUsers } from '../../utils/localstorage.js';
 
 const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseClick }) => {
   const [username, setUsername] = useState(userData.username);
-  const [email, setEmail] = useState(`${ userData.email }`);
+  const [email, setEmail] = useState(`${userData.email}`);
   const [password, setPassword] = useState(userData.password_hash);
   const [aboutMe, setAboutMe] = useState(userData.about_me || '');
 
