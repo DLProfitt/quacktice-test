@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import duckImg from "../../rubber-duck-ian-malcolm.png";
+// import duckImg from "../../rubber-duck-ian-malcolm.png";
 import "../../styles/quiz.css";
 
 // Quiz Functional Component
@@ -65,7 +65,7 @@ const Quiz = () => {
       <div className="results">
         <div className="quiz-results">
           <h2>Your Score: {scorePercentage()}%</h2>
-          <ul className="answers-list">
+          <ol className="answers-list">
             {questionsArray && questionsArray.map((question, index) => (
               <li key={index}>
                 <div className="result-question-container">
@@ -79,7 +79,7 @@ const Quiz = () => {
                 </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </div>
     );
@@ -87,55 +87,61 @@ const Quiz = () => {
 
   // this is returned by default when showResults = false 
   return (
-    <div className="quiz-container">
-      <div className="quiz-frame">
-        <div className="left-arrow">
-          <button
-            className="arrow-button"
-            onClick={handlePreviousQuestion}
-            disabled={currentQuestionIndex === 0}
-          >
-            &larr;
-          </button>
-        </div>
-        {questionsArray.length > 0 && (
-          <div className="question-container">
-            <div className="question">
-              {questionsArray[currentQuestionIndex].question}
-            </div>
-            <div className="answers">
-              {questionsArray[currentQuestionIndex].options.map((option, index) => (
-                <div key={index} className="answer">
-                  <label>
-                    <input
-                      type="radio"
-                      name={`answer-${currentQuestionIndex}`}
-                      value={option}
-                      onChange={() => handleAnswerSelected(currentQuestionIndex, option)}
-                      checked={selectedAnswers[currentQuestionIndex] === option}
-                    />
-                    {option}
-                  </label>
-                </div>
-              ))}
-            </div>
+    <div className="quiz-view">
+      <div className="quiz-container">
+        <div className="quiz-frame">
+          <div className="left-arrow">
+            <button
+              className="arrow-button"
+              onClick={handlePreviousQuestion}
+              disabled={currentQuestionIndex === 0}
+            >
+              &larr;
+            </button>
           </div>
-        )}
-        <div className="right-arrow">
-          <button
-            className="arrow-button"
-            onClick={handleNextQuestion}
-            disabled={currentQuestionIndex === questionsArray.length - 1}
-          >
-            &rarr;
-          </button>
+          {questionsArray.length > 0 && (
+            <div className="question-container">
+              <div className="question-control">
+                <div className="question">
+                  {questionsArray[currentQuestionIndex].question}
+                </div>
+              </div>
+              <div className="answers-container">
+                <div className="answers">
+                  {questionsArray[currentQuestionIndex].options.map((option, index) => (
+                    <div key={index} className="answer">
+                      <label>
+                        <input
+                          type="radio"
+                          name={`answer-${currentQuestionIndex}`}
+                          value={option}
+                          onChange={() => handleAnswerSelected(currentQuestionIndex, option)}
+                          checked={selectedAnswers[currentQuestionIndex] === option}
+                        />
+                        {option}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+          <div className="right-arrow">
+            <button
+              className="arrow-button"
+              onClick={handleNextQuestion}
+              disabled={currentQuestionIndex === questionsArray.length - 1}
+            >
+              &rarr;
+            </button>
+          </div>
+          {/* <img src={duckImg} alt="rubber duck" className="duck-img" /> */}
+          {currentQuestionIndex === questionsArray.length - 1 && (
+            <button className="submit-button" onClick={handleSubmitQuiz}>
+              Submit
+            </button>
+          )}
         </div>
-        <img src={duckImg} alt="rubber duck" className="duck-img" />
-        {currentQuestionIndex === questionsArray.length - 1 && (
-          <button className="submit-button" onClick={handleSubmitQuiz}>
-            Submit
-          </button>
-        )}
       </div>
     </div>
   );

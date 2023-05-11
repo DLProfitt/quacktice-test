@@ -4,10 +4,10 @@
       "id": 6,
       "username": "Ernie",
       "email": "Ernie@example.com",
-      "password_hash": "Ernie&7&",
-      "about_me": "Hey, I'm Ernie! Check out my Rubber Ducky?",
+      "password_hash": "Easy1!",
+      "about_me": "Hey, I'm Ernie! Check out my Rubber Ducky.",
       "created_at": "2023-05-09T18:39:08.313Z",
-      "updated_at": "2023-05-10T05:36:19.534Z"
+      "updated_at": "2023-05-11T06:32:21.446Z"
     },
     {
       "username": "Miles Fischer",

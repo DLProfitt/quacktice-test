@@ -2,10 +2,13 @@
 import React, { useState } from 'react';
 import { loginUser } from '../../utils/api.js';
 import { useAuth } from '../../context/AuthContext.js';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ onRegisterClick }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const { login } = useAuth();
 
@@ -23,6 +26,7 @@ const LoginForm = ({ onRegisterClick }) => {
       const user = await loginUser(email, password);
       console.log("User logged in:", user);
       login(user);
+      navigate("/home");
       // Redirect to dashboard
     } catch (error) {
       console.error("Login error:", error);
@@ -35,30 +39,30 @@ const LoginForm = ({ onRegisterClick }) => {
       <form onSubmit={handleSubmit}>
         <div className="login-input">
           <div>
-          <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email:</label>
           </div>
           <div className="input-area">
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              required
+            />
           </div>
         </div>
         <div className="login-input">
           <div>
-          <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password:</label>
           </div>
           <div className="input-area">
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
           </div>
         </div>
         <button type="submit">Login</button>

@@ -1,3 +1,6 @@
+
+import { setStoredUsers } from "./localstorage";
+
 const API_URL = 'http://localhost:8088';
 
 export const registerUser = async (user) => {
@@ -26,6 +29,7 @@ export const loginUser = async (email, password) => {
     throw new Error('Invalid email or password');
   }
 
+  setStoredUsers(user);
   return user;
 };
 

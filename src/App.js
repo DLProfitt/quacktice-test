@@ -18,6 +18,7 @@ function App() {
       {user ? (
         // Pass the user object to the Dashboard component as userData prop
         <Dashboard userData={user} />
+
       ) : (
         <>
           <header className="App-header">

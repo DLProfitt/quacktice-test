@@ -3,11 +3,12 @@ import { updateUser } from '../../utils/api.js';
 import defaultProfilePic from '../../profile-pic-ernie.png';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.js';
+import { setStoredUsers } from '../../utils/localstorage.js';
 
-const Profile = ({ userData, isEditing, onEditClick, onCloseClick }) => {
+const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseClick }) => {
   const [username, setUsername] = useState(userData.username);
-  const [email, setEmail] = useState(userData.email);
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(`${userData.email}`);
+  const [password, setPassword] = useState(userData.password_hash);
   const [aboutMe, setAboutMe] = useState(userData.about_me || '');
 
   const { login } = useAuth();
@@ -51,6 +52,8 @@ const Profile = ({ userData, isEditing, onEditClick, onCloseClick }) => {
         updated_at: timestamp,
       };
 
+      setStoredUsers(user);
+
       const updatedUser = await updateUser(userData.id, user);
       console.log('User updated successfully:', updatedUser);
 
@@ -60,6 +63,7 @@ const Profile = ({ userData, isEditing, onEditClick, onCloseClick }) => {
     } catch (error) {
       console.error('Error updating user:', error);
     }
+    toggleIsEditing();
   };
 
   return (
@@ -95,7 +99,7 @@ const Profile = ({ userData, isEditing, onEditClick, onCloseClick }) => {
             </div>
             <div className="login-input">
               <div>
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password" value={password}>Password: </label>
               </div>
               <div>
                 <input
