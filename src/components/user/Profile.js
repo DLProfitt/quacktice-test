@@ -3,12 +3,13 @@ import { updateUser } from '../../utils/api.js';
 import defaultProfilePic from '../../profile-pic-ernie.png';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.js';
-import { setStoredUsers } from '../../utils/localstorage.js';
+import { getStoredUsers, setStoredUsers } from '../../utils/localstorage.js';
 
 const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseClick }) => {
   const [username, setUsername] = useState(userData.username);
-  const [email, setEmail] = useState(`${userData.email}`);
+  const [email, setEmail] = useState(userData.email);
   const [password, setPassword] = useState(userData.password_hash);
+  const [newPassword, setNewPassword] = useState('');
   const [aboutMe, setAboutMe] = useState(userData.about_me || '');
 
   const { login } = useAuth();
@@ -29,7 +30,8 @@ const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseCli
   };
 
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    const keepExisting = getStoredUsers.password_hash
+    e ? setNewPassword(e.target.value) : setNewPassword(keepExisting)
   };
 
   const handleAboutMeChange = (e) => {
@@ -46,7 +48,7 @@ const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseCli
         id: userData.id,
         username: username,
         email: email,
-        password_hash: password,
+        password_hash: newPassword ? newPassword : userData.password_hash,
         about_me: aboutMe,
         created_at: userData.created_at,
         updated_at: timestamp,
@@ -57,7 +59,7 @@ const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseCli
       const updatedUser = await updateUser(userData.id, user);
       console.log('User updated successfully:', updatedUser);
 
-      await login(email, password); // Replace this line
+      await login(email, password);
 
       navigate('/home');
     } catch (error) {
@@ -99,12 +101,13 @@ const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseCli
             </div>
             <div className="login-input">
               <div>
-                <label htmlFor="password" value={password}>Password: </label>
+                <label htmlFor="password">Password:</label>
               </div>
               <div>
                 <input
                   type="password"
-                  value={password}
+                  placeholder="********"
+                  value={newPassword}
                   onChange={handlePasswordChange}
                 />
               </div>
