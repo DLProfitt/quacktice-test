@@ -3,7 +3,7 @@ import { updateUser } from '../../utils/api.js';
 import defaultProfilePic from '../../profile-pic-ernie.png';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.js';
-import { setStoredUsers } from '../../utils/localstorage.js';
+import { getStoredUsers, setStoredUsers } from '../../utils/localstorage.js';
 
 const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseClick }) => {
   const [username, setUsername] = useState(userData.username);
@@ -30,7 +30,8 @@ const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseCli
   };
 
   const handlePasswordChange = (e) => {
-    setNewPassword(e.target.value);
+    const keepExisting = getStoredUsers.password_hash
+    e ? setNewPassword(e.target.value) : setNewPassword(keepExisting)
   };
 
   const handleAboutMeChange = (e) => {
@@ -47,7 +48,7 @@ const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseCli
         id: userData.id,
         username: username,
         email: email,
-        password_hash: newPassword ? newPassword : password,
+        password_hash: newPassword ? newPassword : userData.password_hash,
         about_me: aboutMe,
         created_at: userData.created_at,
         updated_at: timestamp,
@@ -105,7 +106,7 @@ const Profile = ({ userData, isEditing, onEditClick, toggleIsEditing, onCloseCli
               <div>
                 <input
                   type="password"
-                  placeholder="Current Password"
+                  placeholder="********"
                   value={newPassword}
                   onChange={handlePasswordChange}
                 />

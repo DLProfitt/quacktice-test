@@ -32,11 +32,15 @@ const Quiz = () => {
     }
   };
 
-  const handleAnswerSelected = (index, answer) => {
-    const newSelectedAnswers = [...selectedAnswers];
-    newSelectedAnswers[index] = answer;
-    setSelectedAnswers(newSelectedAnswers);
-    console.log(index)
+  function handleAnswerSelected(index, answer) {
+    if (index !== 2) {
+      const newSelectedAnswers = [...selectedAnswers];
+      newSelectedAnswers[index] = answer;
+      setSelectedAnswers(newSelectedAnswers);
+      console.log(index)
+    } else {
+      handleSubmitQuiz()
+    }
   };
 
   const handleSubmitQuiz = () => {
@@ -46,8 +50,10 @@ const Quiz = () => {
   // conditional that shows results
   if (showResults) {
 
+    const fakeAnswers = ["How To Make Lambchops", "<section>", "All of the above", "Array", "filter()", "Both object.property and object['property']", "assign", "document.getElementById('myButton').addEventListener('click', function() {});", "import Component from './Component.js';", "To update the state based on actions"]
+
     const scorePercentage = () => {
-      let answers = selectedAnswers;
+      let answers = fakeAnswers/*selectedAnswers*/;
       let correctSelections = 0;
 
       answers.forEach((selected, index) => {
@@ -71,7 +77,7 @@ const Quiz = () => {
                 <div className="result-question-container">
                   <strong className="result-question">{question.question}</strong>
                   <p className="answer-label">
-                    Your answer: <span className="chosen-answer">{selectedAnswers[index]}</span>
+                    Your answer: <span className="chosen-answer">{fakeAnswers[index]}</span>
                   </p>
                   <p>
                     Correct answer: <span className="correct-answer">{question.correct_option}</span>
