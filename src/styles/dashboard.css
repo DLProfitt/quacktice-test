@@ -1,26 +1,24 @@
-/* html {
-  cursor: none;
-} */
-
 .dashboard-container {
   display: flex;
   height: 100vh;
 }
 
 .sidebar-open {
+  margin: 0px;
+  padding: 0px;
   background-color: #4249c6;
   border-right: 4px outset #627089;
   width: 130px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding-top: 0px;
+  overflow: auto;
 }
 
 .sidebar-closed {
   background-color: #282c34;
-  width: 4px;
+  width: 0px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -84,7 +82,6 @@
 
 .dashboard-nav-link {
   color: #009fe2;
-  /* Change the color to white or any other color you prefer */
   text-decoration: none;
   margin-left: 25px;
 }
@@ -92,12 +89,10 @@
 .dashboard-nav-link:hover {
   color: #f6ea00;
   text-decoration: none;
-  /* Remove the underline on hover */
 }
 
 .active {
   color: #009fe2;
-  /* Change the color to white or any other color you prefer */
   text-decoration: none;
 }
 
@@ -124,7 +119,6 @@
   text-decoration: none;
   color: #fafdfb;
   display: flex;
-  /* justify-content: space-between; */
   justify-content: space-evenly;
   width: 215px;
 }
@@ -147,4 +141,20 @@
 
 .toggle-btn:focus {
   outline: none;
+}
+
+.nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    margin-top: 40px;
+}
+
+#profile-link {
+    cursor: pointer;
 }

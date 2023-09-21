@@ -7,7 +7,7 @@
       "password_hash": "Asd1!",
       "about_me": "Hey, I'm Ernie! Check out my Rubber Ducky.",
       "created_at": "2023-05-09T18:39:08.313Z",
-      "updated_at": "2023-05-12T01:29:24.840Z"
+      "updated_at": "2023-09-20T18:24:24.882Z"
     },
     {
       "username": "Miles Fischer",
@@ -44,185 +44,235 @@
       "updated_at": "2023-05-01T10:00:00.000Z"
     }
   ],
-    "questions": [
-      {
-        "id": 1,
-        "quiz_id": 1,
-        "question": "What does HTML stand for?",
-        "options": [ "HyperText Marker Language", "How To Make Lambchops", "HyperText Markup Language", "HyperText Masking Language" ],
-        "correct_option": "HyperText Markup Language",
-        "hint": "HTML is used for structuring your web content.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 2,
-        "quiz_id": 1,
-        "question": "Which of these is a semantic HTML5 tag?",
-        "options": [ "<div>", "<container>", "<section>", "<box>" ],
-        "correct_option": "<section>",
-        "hint": "Semantic tags give meaning to the structure.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 3,
-        "quiz_id": 1,
-        "question": "How do you make presenting your quiz app less boring?",
-        "options": [ "Stop reading through each question", "Prefill the rest of the quiz with answers", "And get to the results", "All of the above" ],
-        "correct_option": "All of the above",
-        "hint": "Think about enhancing user engagement.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 4,
-        "quiz_id": 1,
-        "question": "Which of these is NOT a valid JavaScript data type?",
-        "options": [ "String", "Boolean", "Array", "Object" ],
-        "correct_option": "Array",
-        "hint": "Array is considered an object in JavaScript.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 5,
-        "quiz_id": 1,
-        "question": "Which of these methods creates a new array with all elements that pass a test provided by a function?",
-        "options": [ "map()", "forEach()", "filter()", "reduce()" ],
-        "correct_option": "filter()",
-        "hint": "The method's name is suggestive of its functionality.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 6,
-        "quiz_id": 1,
-        "question": "What is the correct way to access the value of a property in a JavaScript object?",
-        "options": [ "object.property", "object['property']", "object.property()", "Both object.property and object['property']" ],
-        "correct_option": "Both object.property and object['property']",
-        "hint": "You have multiple syntax options to access properties.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 7,
-        "quiz_id": 1,
-        "question": "Which of the following is NOT a valid way to declare a variable in JavaScript?",
-        "options": [ "var", "let", "const", "assign" ],
-        "correct_option": "assign",
-        "hint": "One of these is not a keyword for variable declaration.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 8,
-        "quiz_id": 1,
-        "question": "How do you add a click event listener to a button with the ID 'myButton'?",
-        "options": [ "document.getElementById('myButton').click(function() {});", "document.getElementById('myButton').addEventListener('click', function() {});", "document.getElementById('myButton').onClick(function() {});", "document.getElementById('myButton').clickEvent(function() {});" ],
-        "correct_option": "document.getElementById('myButton').addEventListener('click', function() {});",
-        "hint": "addEventListener is the method to attach event listeners.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 9,
-        "quiz_id": 1,
-        "question": "Which of the following is the correct way to import a component in React?",
-        "options": [ "import Component from './Component.js';", "require('./Component.js');", "import { Component } from './Component.js';", "import './Component.js';" ],
-        "correct_option": "import Component from './Component.js';",
-        "hint": "ES6 import syntax is commonly used in React.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 10,
-        "quiz_id": 1,
-        "question": "In Redux, what is the primary function of a reducer?",
-        "options": [ "To update the state based on actions", "To dispatch actions to the store", "To handle side effects and asynchronous code", "To map the state to props in a React component" ],
-        "correct_option": "To update the state based on actions",
-        "hint": "Reducers produce the 'reduced' or next state.",
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      }
-    ],
-    "answers": [
-      {
-        "id": 1,
-        "question_id": 1,
-        "content": "Answer 1 for Question 1",
-        "is_correct": true,
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 2,
-        "question_id": 1,
-        "content": "Answer 2 for Question 1",
-        "is_correct": false,
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 3,
-        "question_id": 1,
-        "content": "Answer 3 for Question 1",
-        "is_correct": false,
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      }
-    ],
-    "user_quizzes": [
-      {
-        "id": 1,
-        "user_id": 1,
-        "quiz_id": 1,
-        "score": 3,
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 2,
-        "user_id": 2,
-        "quiz_id": 1,
-        "score": 2,
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      },
-      {
-        "id": 3,
-        "user_id": 3,
-        "quiz_id": 2,
-        "score": 1,
-        "created_at": "2023-05-01T10:00:00.000Z",
-        "updated_at": "2023-05-01T10:00:00.000Z"
-      }
-    ],
-    "user_answers": [
-      {
-        "id": 1,
-        "user_quiz_id": 1,
-        "answer_id": 1
-      },
-      {
-        "id": 2,
-        "user_quiz_id": 1,
-        "answer_id": 3
-      },
-      {
-        "id": 3,
-        "user_quiz_id": 2,
-        "answer_id": 2
-      },
-      {
-        "id": 4,
-        "user_quiz_id": 2,
-        "answer_id": 4
-      },
-      {
-        "id": 5,
-        "user_quiz_id": 3,
-        "answer_id": 7
-      }
-    ]
-  }
+  "questions": [
+    {
+      "id": 1,
+      "quiz_id": 1,
+      "question": "What does HTML stand for?",
+      "options": [
+        "HyperText Marker Language",
+        "How To Make Lambchops",
+        "HyperText Markup Language",
+        "HyperText Masking Language"
+      ],
+      "correct_option": "HyperText Markup Language",
+      "hint": "HTML is used for structuring your web content.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "quiz_id": 1,
+      "question": "Which of these is a semantic HTML5 tag?",
+      "options": [
+        "<div>",
+        "<container>",
+        "<section>",
+        "<box>"
+      ],
+      "correct_option": "<section>",
+      "hint": "Semantic tags give meaning to the structure.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "quiz_id": 1,
+      "question": "How do you make presenting your quiz app less boring?",
+      "options": [
+        "Stop reading through each question",
+        "Prefill the rest of the quiz with answers",
+        "And get to the results",
+        "All of the above"
+      ],
+      "correct_option": "All of the above",
+      "hint": "Think about enhancing user engagement.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "quiz_id": 1,
+      "question": "Which of these is NOT a valid JavaScript data type?",
+      "options": [
+        "String",
+        "Boolean",
+        "Array",
+        "Object"
+      ],
+      "correct_option": "Array",
+      "hint": "Array is considered an object in JavaScript.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "quiz_id": 1,
+      "question": "Which of these methods creates a new array with all elements that pass a test provided by a function?",
+      "options": [
+        "map()",
+        "forEach()",
+        "filter()",
+        "reduce()"
+      ],
+      "correct_option": "filter()",
+      "hint": "The method's name is suggestive of its functionality.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "quiz_id": 1,
+      "question": "What is the correct way to access the value of a property in a JavaScript object?",
+      "options": [
+        "object.property",
+        "object['property']",
+        "object.property()",
+        "Both object.property and object['property']"
+      ],
+      "correct_option": "Both object.property and object['property']",
+      "hint": "You have multiple syntax options to access properties.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "quiz_id": 1,
+      "question": "Which of the following is NOT a valid way to declare a variable in JavaScript?",
+      "options": [
+        "var",
+        "let",
+        "const",
+        "assign"
+      ],
+      "correct_option": "assign",
+      "hint": "One of these is not a keyword for variable declaration.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "quiz_id": 1,
+      "question": "How do you add a click event listener to a button with the ID 'myButton'?",
+      "options": [
+        "document.getElementById('myButton').click(function() {});",
+        "document.getElementById('myButton').addEventListener('click', function() {});",
+        "document.getElementById('myButton').onClick(function() {});",
+        "document.getElementById('myButton').clickEvent(function() {});"
+      ],
+      "correct_option": "document.getElementById('myButton').addEventListener('click', function() {});",
+      "hint": "addEventListener is the method to attach event listeners.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "quiz_id": 1,
+      "question": "Which of the following is the correct way to import a component in React?",
+      "options": [
+        "import Component from './Component.js';",
+        "require('./Component.js');",
+        "import { Component } from './Component.js';",
+        "import './Component.js';"
+      ],
+      "correct_option": "import Component from './Component.js';",
+      "hint": "ES6 import syntax is commonly used in React.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "quiz_id": 1,
+      "question": "In Redux, what is the primary function of a reducer?",
+      "options": [
+        "To update the state based on actions",
+        "To dispatch actions to the store",
+        "To handle side effects and asynchronous code",
+        "To map the state to props in a React component"
+      ],
+      "correct_option": "To update the state based on actions",
+      "hint": "Reducers produce the 'reduced' or next state.",
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "question_id": 1,
+      "content": "Answer 1 for Question 1",
+      "is_correct": true,
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "question_id": 1,
+      "content": "Answer 2 for Question 1",
+      "is_correct": false,
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "question_id": 1,
+      "content": "Answer 3 for Question 1",
+      "is_correct": false,
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    }
+  ],
+  "user_quizzes": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "quiz_id": 1,
+      "score": 3,
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "quiz_id": 1,
+      "score": 2,
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "quiz_id": 2,
+      "score": 1,
+      "created_at": "2023-05-01T10:00:00.000Z",
+      "updated_at": "2023-05-01T10:00:00.000Z"
+    }
+  ],
+  "user_answers": [
+    {
+      "id": 1,
+      "user_quiz_id": 1,
+      "answer_id": 1
+    },
+    {
+      "id": 2,
+      "user_quiz_id": 1,
+      "answer_id": 3
+    },
+    {
+      "id": 3,
+      "user_quiz_id": 2,
+      "answer_id": 2
+    },
+    {
+      "id": 4,
+      "user_quiz_id": 2,
+      "answer_id": 4
+    },
+    {
+      "id": 5,
+      "user_quiz_id": 3,
+      "answer_id": 7
+    }
+  ]
+}

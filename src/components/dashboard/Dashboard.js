@@ -20,7 +20,7 @@ const Dashboard = ({ userData }) => {
     <SidebarContext.Provider value={{ isOpen, setIsOpen }}>
       <Header userData={userData} onProfileClick={handleProfileClick} />
       <div className="dashboard">
-        <Sidebar />
+        <Sidebar userData={userData} onProfileClick={handleProfileClick} />
         <MainContent />
       </div>
       {isProfilePopupVisible && <ProfilePopup onClose={handleProfileClick} userData={userData} />}

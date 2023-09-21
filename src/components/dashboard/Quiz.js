@@ -8,6 +8,8 @@ const Quiz = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [showResults, setShowResults] = useState(false);
+    const [showHint, setShowHint] = useState(false);
+    const [currentHint, setCurrentHint] = useState("Click for a hint");
 
     useEffect(() => {
         fetch("http://localhost:8088/questions")
@@ -26,6 +28,17 @@ const Quiz = () => {
                 setQuestionsArray(transformedQuestions);
             });
     }, []);
+
+    useEffect(() => {
+        if (questionsArray.length > 0 && currentQuestionIndex < questionsArray.length) {
+            const { hint } = questionsArray[currentQuestionIndex];
+            setCurrentHint(showHint && hint ? hint : "Click for a hint");
+        }
+    }, [showHint]);
+
+    const toggleHint = () => {
+        setShowHint(!showHint);
+    };
 
     const handlePreviousQuestion = () => {
         if (currentQuestionIndex > 0) {
@@ -141,11 +154,12 @@ const Quiz = () => {
                         </button>
                     </div>
                     <img
-                        onClick={getHint}
+                        onClick={toggleHint}
                         src={duckImg}
                         alt="rubber duck"
                         className="duck-img"
                     />
+                    <div id="hint-div" className={!showHint ? "word-bubble" : "hint-bubble"}>{currentHint}</div>
                     {currentQuestionIndex === questionsArray.length - 1 && (
                         <button className="submit-button" onClick={handleSubmitQuiz}>
                             Submit
