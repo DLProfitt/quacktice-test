@@ -81,7 +81,7 @@
 }
 
 .dashboard-nav-link {
-  color: #009fe2;
+  color: #fbfcfb;
   text-decoration: none;
   margin-left: 25px;
 }
@@ -92,7 +92,7 @@
 }
 
 .active {
-  color: #009fe2;
+  color: #fbfcfb;
   text-decoration: none;
 }
 
