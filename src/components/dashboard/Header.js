@@ -18,8 +18,8 @@ const Header = ({ userData, onProfileClick }) => {
   }
 
     return (
-      <div>
     <header className="dashboard-header">
+            <div className="header-items">
       <div className="left-section">
         <div
           className="profile-pic-container"
@@ -63,8 +63,8 @@ const Header = ({ userData, onProfileClick }) => {
           Logout
         </Link>
       </div >
-            </header >
         </div>
+            </header >
   );
 };
 
