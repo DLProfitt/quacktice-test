@@ -52,7 +52,7 @@ html {
   background-color: #282c34;
   min-height: 90px;
   height: 90px;
-  width: 100vw;
+  width: 100%;
   /* adjust the height of the header */
 /*  padding: 0 10px;*/
   position: fixed;

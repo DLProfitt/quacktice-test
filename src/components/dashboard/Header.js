@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import defaultProfilePic from '../../profile-pic-ernie.png';
 import logo from '../../quacktice-test-icon.png';
@@ -17,7 +17,8 @@ const Header = ({ userData, onProfileClick }) => {
     window.location.reload();
   }
 
-  return (
+    return (
+      <div>
     <header className="dashboard-header">
       <div className="left-section">
         <div
@@ -62,7 +63,8 @@ const Header = ({ userData, onProfileClick }) => {
           Logout
         </Link>
       </div >
-    </header >
+            </header >
+        </div>
   );
 };
 

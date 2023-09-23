@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+﻿import React, { useContext } from "react";
 import { Link, useLocation } from 'react-router-dom';
 import { SidebarContext } from "./Dashboard";
 import { getStoredUsers, removeStoredUsers } from '../../utils/localstorage.js';
@@ -35,14 +35,14 @@ const Sidebar = ({ userData, onProfileClick }) => {
                     className={`dashboard-nav-link sidebar-nav-link ${location.pathname === '/home' ? 'active' : ''
                         }`}
                 >
-                    Home
+                        🏠 Home
                 </Link>
                 <Link
                     to="/quiz"
                     className={`dashboard-nav-link sidebar-nav-link ${location.pathname === '/quiz' ? 'active' : ''
                         }`}
                 >
-                    Quiz
+                    ✏️ Quiz
                 </Link>
                 <div
                     id="profile-link"
@@ -50,7 +50,7 @@ const Sidebar = ({ userData, onProfileClick }) => {
                         }`}
                     onClick={onProfileClick}
                 >
-                    Profile
+                    👤 Profile
                 </div>
                 <Link
                     onClick={handleLogout}
@@ -58,7 +58,7 @@ const Sidebar = ({ userData, onProfileClick }) => {
                     className={`dashboard-nav-link sidebar-nav-link ${location.pathname === '/' ? 'active' : ''
                         }`}
                 >
-                    Logout
+                    🚪 Logout
                 </Link>
           </div>
           <div className="nav-sidebar">
