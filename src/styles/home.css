@@ -4,6 +4,7 @@
   flex-direction: column;
   height: auto;
   width: 100%;
+  margin-left: 7px;
 }
 
 .card-container {
