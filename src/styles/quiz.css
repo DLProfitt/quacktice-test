@@ -1,3 +1,9 @@
+.results-containter {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 .quiz-view {
   display: flex;
   justify-content: center;
@@ -103,9 +109,15 @@
 
 .results {
   width: 100%;
+  padding-left: 91px;
+  margin-top: -30px;
   display: flex;
   justify-content: center;
 }
+
+    .results h2 {
+/*        background-color: red;*/
+    }
 
 .quiz-results {
   width: 100%;

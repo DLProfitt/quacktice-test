@@ -2,11 +2,16 @@ html {
     background-image: url("../quacktice-test-gradient-background.png");
     background-color: #cccccc;
     background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .dashboard-container {
+    background-color: yellow;
   display: flex;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 .sidebar-open {
@@ -29,14 +34,14 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -22px;
+/*  margin-top: -22px;*/
   padding-top: 0px;
 }
 
 .sidebar-icon {
   width: 40px;
   height: 40px;
-  margin-bottom: 10px;
+/*  margin-bottom: 10px;*/
 }
 
 .dashboard-header {
@@ -47,10 +52,10 @@ html {
   background-color: #282c34;
   min-height: 90px;
   height: 90px;
+  width: 100vw;
   /* adjust the height of the header */
-  padding: 0 10px;
-  /* reduce the padding to half */
-  position: relative;
+/*  padding: 0 10px;*/
+  position: fixed;
   z-index: 1;
 }
 
@@ -79,7 +84,12 @@ html {
 }
 
 .dashboard {
+/*    background-color: greenyellow;*/
   display: flex;
+  position: absolute;
+  height: 88vh;
+  width: 100%;
+  margin-top: 12vh;
 }
 
 .dashboard-nav {
@@ -110,10 +120,15 @@ html {
 }
 
 .main-content {
+/*    background-color: cornflowerblue;*/
     display: flex;
     flex-grow: 1;
     padding: 20px;
-    padding-right: 164px;
+    padding-top: 50px;
+    margin-left: 130px;
+    margin-right: 130px;
+    overflow: auto;
+    scrollbar-color: auto;
 }
 
 /*  */
@@ -147,10 +162,16 @@ html {
   outline: none;
 }
 
+.sidebar {
+    display: flex;
+}
+
 .nav-sidebar {
+    position: fixed;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 88vh;
+/*    margin-top: 12vh;*/
     overflow: auto;
 }
 

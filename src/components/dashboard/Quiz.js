@@ -68,11 +68,21 @@ const Quiz = () => {
         console.log("Hint: " + hint);
     };
 
+    const scorePercentage = () => {
+            let correctSelections = 0;
+            selectedAnswers.forEach((selected, index) => {
+                if (selected === questionsArray[index].correct_option) {
+                    correctSelections += 1;
+                }
+            });
+            return (correctSelections / questionsArray.length) * 100;
+        };
+
     if (showResults) {
-        const fakeAnswers = ["How To Make Lambchops", "<section>", "All of the above", "Array", "filter()", "Both object.property and object['property']", "assign", "document.getElementById('myButton').addEventListener('click', function() {});", "import Component from './Component.js';", "To update the state based on actions"]
+        //const fakeAnswers = ["How To Make Lambchops", "<section>", "All of the above", "Array", "filter()", "Both object.property and object['property']", "assign", "document.getElementById('myButton').addEventListener('click', function() {});", "import Component from './Component.js';", "To update the state based on actions"]
         const scorePercentage = () => {
             let correctSelections = 0;
-            fakeAnswers.forEach((selected, index) => {
+            selectedAnswers.forEach((selected, index) => {
                 if (selected === questionsArray[index].correct_option) {
                     correctSelections += 1;
                 }
@@ -81,6 +91,7 @@ const Quiz = () => {
         };
 
         return (
+            <div>
             <div className="results">
                 <div className="quiz-results">
                     <h2>Your Score: {scorePercentage()}%</h2>
@@ -90,7 +101,7 @@ const Quiz = () => {
                                 <div className="result-question-container">
                                     <strong className="result-question">{question.question}</strong>
                                     <p className="answer-label">
-                                        Your answer: <span className="chosen-answer">{fakeAnswers[index]}</span>
+                                        Your answer: <span className="chosen-answer">{selectedAnswers[index]}</span>
                                     </p>
                                     <p>
                                         Correct answer: <span className="correct-answer">{question.correct_option}</span>
@@ -99,6 +110,7 @@ const Quiz = () => {
                             </li>
                         ))}
                     </ol>
+                </div>
                 </div>
             </div>
         );
